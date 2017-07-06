@@ -1,4 +1,4 @@
-print("Welcome to the Horus Manager app!!!")
+print("Welcome to the Horus Manager app!")
 print("Type the command you want to execute or type 'help' if you lost")
 
 def execute_shell():
