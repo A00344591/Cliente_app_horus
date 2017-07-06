@@ -21,7 +21,7 @@ def execute_shell():
             print("The actions are: ")
             for action in Actions_description:
                 print(action)
-        if inp not in Action_list and inp != "" and inp !="exit":
+        if inp not in Action_list and inp != "":
             print("Not a valid command.")
 
         if inp=="exit":
