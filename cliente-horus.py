@@ -1,9 +1,13 @@
-import requests
+#import requests
 
-Actions_list = ["Add", "Remove", "View"]
+inp = ""
 
-print ("Horus manager")
-for i in Actions_list:
-    print (i)
+while True:
+    inp = input(">>>")
 
-Actions_choose = input("What do you want to do?: ")
+    if inp == "Display commands":
+
+        Actions_list = ["Add", "Remove", "View"]
+        for action in Actions_list:
+            print(action)
+
