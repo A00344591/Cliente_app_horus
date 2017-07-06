@@ -1,3 +1,5 @@
+import  sys
+
 print("Welcome to the Horus Manager app!")
 
 def users():
@@ -23,8 +25,8 @@ def execute_shell():
             print("Not a valid command.")
 
         if inp=="exit":
-            break
-def users2():
+            sys.exit()
+def check():
     x_count = 0
     while x_count < 3:
         users()
@@ -33,6 +35,8 @@ def users2():
         else:
             x_count += 1
             print("Error de usuario... Vuelve a intentar...")
-            print("Te quedan " +str( 3-x_count ) + " intentos")
+            print("Te quedan " + str(3 - x_count) + " intentos")
 
-users2()
+check()
+
+
