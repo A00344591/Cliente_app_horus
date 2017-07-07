@@ -30,9 +30,10 @@ def execute_shell():
 
 def add():
     tok = 0
-    actions_add = ("battery", "computer", "rope", "charger", "back")
+    actions_add = ("battery", "computer", "rope", "charger")
+    print("What do you want to add?... type 'options' to see what you can add or type 'back' to go back to the Horus Manager App Shell")
     while tok == 0:
-        prmt = input("What do you want to add?... type 'options' to see what you can add")
+        prmt = input(">>>")
         prmt = prmt.lower()
         if prmt == "options":
             for action_2 in actions_add:
