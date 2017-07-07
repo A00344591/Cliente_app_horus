@@ -27,6 +27,8 @@ def execute_shell():
             sys.exit()
         elif inp == "add":
             add()
+        elif inp == "remove":
+            remove()
 
 def add():
     tok = 0
@@ -54,6 +56,35 @@ def add():
             tok += 1
             pass
         elif prmt != "" and prmt not in actions_add:
+            print("Not a valid command.")
+
+def remove():
+    tok = 0
+    actions_rem = ("battery", "computer", "rope", "charger")
+    print(
+        "What do you want to remove?... type 'options' to see what you can delete or type 'back' to go back to the Horus Manager App Shell")
+    while tok == 0:
+        prmt = input(">>>")
+        prmt = prmt.lower()
+        if prmt == "options":
+            for action_2 in actions_rem:
+                print(action_2)
+        elif prmt == "battery":
+            print("Aqui agregas la informacion de la bateria")
+            tok += 1
+        elif prmt == "computer":
+            print("Aqui agregas la informacion de la computadora")
+            tok += 1
+        elif prmt == "rope":
+            print("Aqui agregas la informacion de la cuerda")
+            tok += 1
+        elif prmt == "charger":
+            print("Aqui agregas la informacion del cargador")
+            tok += 1
+        elif prmt == "back":
+            tok += 1
+            pass
+        elif prmt != "" and prmt not in actions_rem:
             print("Not a valid command.")
 
 usuarios = ("HORUS", "emi", "paok", "fish")
