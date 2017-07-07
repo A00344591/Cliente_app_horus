@@ -1,5 +1,6 @@
 import  sys
-
+import requests
+import json
 print("Welcome to the Horus Manager app!")
 
 def get_users():
@@ -29,7 +30,6 @@ def execute_shell():
             add()
         elif inp == "remove":
             remove()
-
 def add():
     tok = 0
     actions_add = ("battery", "computer", "rope", "charger")
@@ -41,7 +41,17 @@ def add():
             for action_2 in actions_add:
                 print(action_2)
         elif prmt == "battery":
-            print("Aqui agregas la informacion de la bateria")
+            comment = input("Agrega la información: ")
+            battery_number = input("Which battery is it? ")
+            try:
+                battery_number = int(battery_number)
+            except ValueError:
+                print("Not a valid number")
+            data = {'data_fields': comment, 'name': 'Number ' + str(battery_number), 'type': 'battery', 'user': user}
+            r = requests.post('http://192.168.0.1:5000/create', json= data)
+            response = r.json()
+            id = response['id']
+            print("Tu entrada se guardo en la id: " + str(id))
             tok += 1
         elif prmt == "computer":
             print("Aqui agregas la informacion de la computadora")
