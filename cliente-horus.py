@@ -48,7 +48,7 @@ def add():
             except ValueError:
                 print("Not a valid number")
                 trigger = 5
-                if trigger=!5:
+                if trigger != 5:
                     data = {'data_fields': comment, 'name': 'Number ' + str(battery_number), 'type': 'battery'}
                     r = requests.post('http://192.168.0.1:5000/create', json= data)
                     response = r.json()
