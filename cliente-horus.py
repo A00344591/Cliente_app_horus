@@ -26,30 +26,33 @@ def execute_shell():
         elif inp == "exit":
             sys.exit()
         elif inp == "add":
-            tok = 0
-            actions_add = ("battery", "computer", "rope", "charger", "back")
-            while tok == 0:
-                prmt = input("What do you want to add?... type 'options' to see what you can add")
-                prmt = prmt.lower()
-                if prmt == "options":
-                    for action_2 in actions_add:
-                        print(action_2)
-                    tok += 1
-                elif prmt == "battery":
-                    print("Aqui agregas la informacion de la bateria")
-                    tok += 1
-                elif prmt == "computer":
-                    print("Aqui agregas la informacion de la computadora")
-                    tok += 1
-                elif prmt == "rope":
-                    print("Aqui agregas la informacion de la cuerda")
-                    tok += 1
-                elif prmt == "charger":
-                    print("Aqui agregas la informacion del cargador")
-                    tok += 1
-                elif prmt == "back":
-                    tok += 1
-                    pass
+            add()
+
+def add():
+    tok = 0
+    actions_add = ("battery", "computer", "rope", "charger", "back")
+    while tok == 0:
+        prmt = input("What do you want to add?... type 'options' to see what you can add")
+        prmt = prmt.lower()
+        if prmt == "options":
+            for action_2 in actions_add:
+                print(action_2)
+            tok += 1
+        elif prmt == "battery":
+            print("Aqui agregas la informacion de la bateria")
+            tok += 1
+        elif prmt == "computer":
+            print("Aqui agregas la informacion de la computadora")
+            tok += 1
+        elif prmt == "rope":
+            print("Aqui agregas la informacion de la cuerda")
+            tok += 1
+        elif prmt == "charger":
+            print("Aqui agregas la informacion del cargador")
+            tok += 1
+        elif prmt == "back":
+            tok += 1
+            pass
 
 usuarios = ("HORUS", "emi", "paok", "fish")
 contraseñas = ("root", "a00344591", "12345", "67890")
