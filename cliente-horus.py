@@ -47,12 +47,14 @@ def add():
                 battery_number = int(battery_number)
             except ValueError:
                 print("Not a valid number")
-            data = {'data_fields': comment, 'name': 'Number ' + str(battery_number), 'type': 'battery', 'user': user}
-            r = requests.post('http://192.168.0.1:5000/create', json= data)
-            response = r.json()
-            id = response['id']
-            print("Tu entrada se guardo en la id: " + str(id))
-            tok += 1
+                trigger = 5
+                if trigger=!5:
+                    data = {'data_fields': comment, 'name': 'Number ' + str(battery_number), 'type': 'battery'}
+                    r = requests.post('http://192.168.0.1:5000/create', json= data)
+                    response = r.json()
+                    id = response['id']
+                    print("Tu entrada se guardo en la id: " + str(id))
+                    tok += 1
         elif prmt == "computer":
             print("Aqui agregas la informacion de la computadora")
             tok += 1
@@ -80,7 +82,8 @@ def remove():
             for action_2 in actions_rem:
                 print(action_2)
         elif prmt == "battery":
-            print("Aqui agregas la informacion de la bateria")
+            object = input("Write the id of the battery you wish to delete: ")
+            requests.delete('http://192.168.0.1:5000/' + object)
             tok += 1
         elif prmt == "computer":
             print("Aqui agregas la informacion de la computadora")
@@ -96,6 +99,8 @@ def remove():
             pass
         elif prmt != "" and prmt not in actions_rem:
             print("Not a valid command.")
+
+#def view_item()
 
 usuarios = ("HORUS", "emi", "paok", "fish")
 contraseñas = ("root", "a00344591", "12345", "67890")
