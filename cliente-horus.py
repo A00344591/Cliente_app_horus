@@ -16,7 +16,7 @@ def execute_shell():
         Actions_description = ["Add: add an item to the database", "Remove: delete an item from the database ",
                         "View: see information about an item", "Exit: exit shell"]
 
-        Action_list = ["add", "remove", "exit", "view", "help", "battery", "computer", "rope", "charger", "back"]
+        Action_list = ["add", "remove", "exit", "view", "help"]
         if inp == "help":
             print("The actions are: ")
             for action in Actions_description:
@@ -38,7 +38,6 @@ def add():
         if prmt == "options":
             for action_2 in actions_add:
                 print(action_2)
-            tok += 1
         elif prmt == "battery":
             print("Aqui agregas la informacion de la bateria")
             tok += 1
@@ -54,6 +53,8 @@ def add():
         elif prmt == "back":
             tok += 1
             pass
+        elif prmt != "" and prmt not in actions_add:
+            print("Not a valid command.")
 
 usuarios = ("HORUS", "emi", "paok", "fish")
 contraseñas = ("root", "a00344591", "12345", "67890")
