@@ -1,5 +1,4 @@
 import  sys
-
 print("Welcome to the Horus Manager app!")
 
 def users():
@@ -15,7 +14,6 @@ def execute_shell():
         inp = inp.lower()
         Actions_description = ["Add: add an item to the database", "Remove: delete an item from the database ",
                         "View: see information about an item", "Exit: exit shell"]
-
         Action_list = ["add", "remove", "exit", "view"]
         if inp == "help":
             print("The actions are: ")
@@ -23,9 +21,9 @@ def execute_shell():
                 print(action)
         if inp not in Action_list and inp != "":
             print("Not a valid command.")
-
         if inp=="exit":
             sys.exit()
+
 def check():
     x_count = 0
     while x_count < 3:
@@ -34,8 +32,14 @@ def check():
             execute_shell()
         else:
             x_count += 1
-            print("Error de usuario... Vuelve a intentar...")
-            print("Te quedan " + str(3 - x_count) + " intentos")
+            print("Error de usuario... ")
+            if 3 - x_count == 1:
+                print("Te queda " + str(3 - x_count) + " intento")
+            elif 3 - x_count == 0:
+                print("Ya no te quedan intentos... Cerrando programa")
+            elif 3 - x_count != 1:
+                print("Te quedan " + str(3 - x_count) + " intentos")
+
 
 check()
 
